@@ -23,7 +23,7 @@ class ReportableTest extends TestCase
         $obj = new class extends ExtendsReportable {
             public function __construct()
             {
-                $this->report = new ExtendsReportableReport();
+                $this->report = null;
             }
 
         };
