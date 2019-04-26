@@ -23,6 +23,7 @@ class ReportableTest extends TestCase
         $obj = new class extends ExtendsReportable {
             public function __construct()
             {
+                // parent::__construct(); // not called intentionally
                 $this->report = null;
             }
 
