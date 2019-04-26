@@ -1,19 +1,13 @@
-# PHP useful traits
+# PHP reports
 
-[![PHP Version](https://img.shields.io/packagist/php-v/alecrabbit/php-traits.svg)](https://php.net)
-[![Build Status](https://travis-ci.org/alecrabbit/php-traits.svg?branch=master)](https://travis-ci.org/alecrabbit/php-traits)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alecrabbit/php-traits/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alecrabbit/php-traits/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/alecrabbit/php-traits/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alecrabbit/php-traits/?branch=master)
-[![Total Downloads](https://poser.pugx.org/alecrabbit/php-traits/downloads)](https://packagist.org/packages/alecrabbit/php-traits)
+[![PHP Version](https://img.shields.io/packagist/php-v/alecrabbit/php-reports.svg)](https://php.net)
+[![Build Status](https://travis-ci.org/alecrabbit/php-reports.svg?branch=master)](https://travis-ci.org/alecrabbit/php-reports)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alecrabbit/php-reports/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alecrabbit/php-reports/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/alecrabbit/php-reports/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alecrabbit/php-reports/?branch=master)
+[![Total Downloads](https://poser.pugx.org/alecrabbit/php-reports/downloads)](https://packagist.org/packages/alecrabbit/php-reports)
 
-[![Latest Stable Version](https://poser.pugx.org/alecrabbit/php-traits/v/stable)](https://packagist.org/packages/alecrabbit/php-traits)
-[![Latest Stable Version](https://img.shields.io/packagist/v/alecrabbit/php-traits.svg)](https://packagist.org/packages/alecrabbit/php-traits)
-[![Latest Unstable Version](https://poser.pugx.org/alecrabbit/php-traits/v/unstable)](https://packagist.org/packages/alecrabbit/php-traits)
+[![Latest Stable Version](https://poser.pugx.org/alecrabbit/php-reports/v/stable)](https://packagist.org/packages/alecrabbit/php-reports)
+[![Latest Stable Version](https://img.shields.io/packagist/v/alecrabbit/php-reports.svg)](https://packagist.org/packages/alecrabbit/php-reports)
+[![Latest Unstable Version](https://poser.pugx.org/alecrabbit/php-reports/v/unstable)](https://packagist.org/packages/alecrabbit/php-reports)
 
-[![License](https://poser.pugx.org/alecrabbit/php-traits/license)](https://packagist.org/packages/alecrabbit/php-traits)
-
-##### Name related traits
-[Nameable](docs/Nameable.md)
-
-##### DoesProcessException
-[DoesProcessException](docs/DoesProcessException.md)
+[![License](https://poser.pugx.org/alecrabbit/php-reports/license)](https://packagist.org/packages/alecrabbit/php-reports)
