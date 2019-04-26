@@ -15,6 +15,8 @@ abstract class Reportable implements ReportableInterface
         $this->report = $this->createEmptyReport();
     }
 
+    abstract protected function createEmptyReport(): ReportInterface;
+
     /**
      * @param bool $rebuild Rebuild report object
      * @return ReportInterface
@@ -33,6 +35,19 @@ abstract class Reportable implements ReportableInterface
     }
 
     /**
+     * @return bool
+     * @psalm-suppress RedundantConditionGivenDocblockType
+     */
+    protected function checkReport(): bool
+    {
+        if ($this->report instanceof ReportInterface) {
+            return false;
+        }
+        $this->report = $this->createEmptyReport();
+        return true;
+    }
+
+    /**
      * Checks if all conditions needed for report are met
      */
     protected function checkConditions(): void
@@ -44,19 +59,5 @@ abstract class Reportable implements ReportableInterface
      */
     protected function beforeReport(): void
     {
-    }
-
-    abstract protected function createEmptyReport(): ReportInterface;
-
-    /**
-     * @return bool
-     */
-    protected function checkReport(): bool
-    {
-        if (null === $this->report) {
-            $this->report = $this->createEmptyReport();
-            return true;
-        }
-        return false;
     }
 }
