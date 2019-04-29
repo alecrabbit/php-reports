@@ -10,11 +10,11 @@ abstract class Reportable implements ReportableInterface
     /** @var ReportInterface */
     protected $report;
 
-    public function __construct()
-    {
-        $this->report = $this->createEmptyReport();
-    }
-
+//    public function __construct()
+//    {
+//        $this->report = $this->createEmptyReport();
+//    }
+//
     abstract protected function createEmptyReport(): ReportInterface;
 
     /**
