@@ -18,11 +18,11 @@ abstract class AbstractFormatter implements FormatterInterface
     abstract public function format(Formattable $data): string;
 
     /**
-     * @param Formattable $data
+     * @param object $data
      * @param string $class
      * @return string
      */
-    protected function errorMessage(Formattable $data, string $class): string
+    protected function errorMessage(object $data, string $class): string
     {
         return
             $class . ' expected, ' . get_class($data) . ' given.';
