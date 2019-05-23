@@ -22,7 +22,10 @@
         "psr-4": {
             "AlecRabbit\\Reports\\": "src\\Reports",
             "AlecRabbit\\Formatters\\": "src\\Formatters"
-        }
+        },
+        "files": [
+            "src/bootstrap.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

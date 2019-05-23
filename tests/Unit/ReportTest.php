@@ -2,6 +2,10 @@
 
 namespace AlecRabbit\Tests\Reports;
 
+use AlecRabbit\Formatters\DefaultFormatter;
+use AlecRabbit\Reports\Core\AbstractReport;
+use AlecRabbit\Reports\Core\AbstractReportable;
+use AlecRabbit\Reports\DefaultReport;
 use AlecRabbit\Tests\MockedFormatter;
 use AlecRabbit\Tests\MockedReport;
 use AlecRabbit\Tests\MockedReportable;
@@ -24,7 +28,8 @@ class ReportTest extends TestCase
         $this->assertEquals($str, (string)$report);
         $this->assertEquals($str, $report->getFormatter()->format($report));
 
-        $f = new class extends MockedFormatter {
+        $f = new class extends MockedFormatter
+        {
             protected function simple(array $data): string
             {
                 return
@@ -43,5 +48,46 @@ class ReportTest extends TestCase
         $str = 'ValueEquals: 2';
         $this->assertEquals($str, (string)$report);
         $this->assertEquals($str, $report->getFormatter()->format($report));
+    }
+
+    /**
+     * @test
+     * @throws BindingResolutionException
+     */
+    public function second(): void
+    {
+        $o =
+            new class extends AbstractReportable
+            {
+            };
+        $report = $o->report();
+        $this->assertInstanceOf(DefaultReport::class, $report);
+        $this->assertSame($o, $report->getReportable());
+        $this->assertInstanceOf(DefaultFormatter::class, $report->getFormatter());
+        $str = '[AlecRabbit\Formatters\DefaultFormatter]: got AlecRabbit\Reports\DefaultReport';
+        $this->assertEquals($str, (string)$report);
+    }
+
+    /** @test */
+    public function third(): void
+    {
+        $report = new DefaultReport();
+        $this->assertNull($report->getFormatter());
+        $str = 'AlecRabbit\Reports\DefaultReport ERROR: no formatter';
+        $this->assertEquals($str, (string)$report);
+    }
+
+    /** @test */
+    public function fours(): void
+    {
+        $formatter = new DefaultFormatter();
+        $report = new class($formatter) extends AbstractReport
+        {
+        };
+        $this->assertSame($formatter, $report->getFormatter());
+        $str = '[AlecRabbit\Formatters\DefaultFormatter] ERROR: AlecRabbit\Reports\DefaultReport expected';
+        $formatted = $formatter->format($report);
+        $this->assertStringContainsString($str, $formatted);
+        $this->assertStringContainsString('given.', $formatted);
     }
 }
