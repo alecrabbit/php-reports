@@ -15,6 +15,7 @@ abstract class AbstractFormatter implements FormatterInterface
         $this->options = $options ?? 0;
     }
 
+    /** {@inheritDoc} */
     abstract public function format(Formattable $data): string;
 
     /**
