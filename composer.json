@@ -1,7 +1,7 @@
 {
     "name": "alecrabbit/php-reports",
     "type": "library",
-    "description": "PHP traits to use in every project :)",
+    "description": "PHP reports prototypes :)",
     "keywords": [
         "php",
         "reports",
