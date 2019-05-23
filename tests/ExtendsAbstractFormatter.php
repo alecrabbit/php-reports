@@ -3,7 +3,7 @@
 namespace AlecRabbit\Tests;
 
 use AlecRabbit\Formatters\Core\AbstractFormatter;
-use AlecRabbit\Formatters\Core\Formattable;
+use AlecRabbit\Reports\Core\Formattable;
 
 class ExtendsAbstractFormatter extends AbstractFormatter
 {

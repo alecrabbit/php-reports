@@ -2,7 +2,7 @@
 
 namespace AlecRabbit\Tests;
 
-use AlecRabbit\Formatters\Core\Formattable;
+use AlecRabbit\Reports\Core\Formattable;
 use PHPUnit\Framework\TestCase;
 
 class AbstractFormatterTest extends TestCase
