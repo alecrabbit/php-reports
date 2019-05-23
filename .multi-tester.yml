@@ -6,3 +6,7 @@ alecrabbit/php-simple-profiler:
 alecrabbit/php-console-colour:
   install: default
   script: default
+
+alecrabbit/php-accessories:
+  install: default
+  script: default
