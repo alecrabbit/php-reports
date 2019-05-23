@@ -12,7 +12,7 @@ interface FormatterInterface
     public function __construct(?int $options = null);
 
     /**
-     * @param \AlecRabbit\Reports\Core\Formattable $data
+     * @param Formattable $data
      * @return string
      */
     public function format(Formattable $data): string;

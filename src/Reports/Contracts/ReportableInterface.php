@@ -2,11 +2,12 @@
 
 namespace AlecRabbit\Reports\Contracts;
 
+use AlecRabbit\Reports\Core\AbstractReport;
+
 interface ReportableInterface
 {
     /**
-     * @param bool $rebuild Rebuild report object
-     * @return ReportInterface
+     * @return AbstractReport
      */
-    public function report(bool $rebuild = true): ReportInterface;
+    public function report(): AbstractReport;
 }
