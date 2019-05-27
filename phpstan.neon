@@ -1,0 +1,5 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#Parameter \#1 \$implementation of method Illuminate\Contracts\Container\ContextualBindingBuilder::give\(\) expects Closure|string, int|null given.#'
+			path: %currentWorkingDirectory%/src/Reports/Core/AbstractReportable.php

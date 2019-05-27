@@ -47,7 +47,17 @@ class ReportTest extends TestCase
         $this->assertSame($f, $report->getFormatter());
         $str = 'ValueEquals: 2';
         $this->assertEquals($str, (string)$report);
-        $this->assertEquals($str, $report->getFormatter()->format($report));
+        $formatter = $report->getFormatter();
+        $this->assertEquals($str, $formatter->format($report));
+        /** @var MockedFormatter $formatter */
+        $this->assertEquals(3, $formatter->getOptions());
+        $o->setFormatter(MockedFormatter::class, 4);
+        $report = $o->report();
+        $formatter = $report->getFormatter();
+        $str = 'Value: 2';
+        $this->assertEquals($str, $formatter->format($report));
+        /** @var MockedFormatter $formatter */
+        $this->assertEquals(4, $formatter->getOptions());
     }
 
     /**

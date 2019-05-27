@@ -29,7 +29,8 @@ abstract class AbstractReportable implements ReportableInterface
         $this->setReportFormatterDependencies(
             $this->reportClass,
             FormatterInterface::class,
-            $this->formatterClass
+            $this->formatterClass,
+            null
         );
     }
 
@@ -37,9 +38,16 @@ abstract class AbstractReportable implements ReportableInterface
      * @param string $reportClass
      * @param string $formatterClass
      * @param AbstractFormatter|string|\Closure $formatter
+     * @param null|int $options
+     *
+     * @psalm-suppress InvalidScalarArgument
      */
-    protected function setReportFormatterDependencies(string $reportClass, string $formatterClass, $formatter): void
-    {
+    protected function setReportFormatterDependencies(
+        string $reportClass,
+        string $formatterClass,
+        $formatter,
+        ?int $options
+    ): void {
         if ($formatter instanceof AbstractFormatter) {
             $formatter = static function () use ($formatter): AbstractFormatter {
                 return $formatter;
@@ -49,12 +57,19 @@ abstract class AbstractReportable implements ReportableInterface
             ->when($reportClass)
             ->needs($formatterClass)
             ->give($formatter);
+        if (is_string($formatter)) {
+            container()
+                ->when($formatter)
+                ->needs('$options')
+                ->give($options);
+        }
     }
 
     /**
      * @param null|AbstractFormatter|string|\Closure $formatter
+     * @param null|int $options
      */
-    public function setFormatter($formatter = null): void
+    public function setFormatter($formatter = null, ?int $options = null): void
     {
         /** @noinspection ProperNullCoalescingOperatorUsageInspection */
         $formatter = $formatter ?? $this->formatterClass;
@@ -62,7 +77,8 @@ abstract class AbstractReportable implements ReportableInterface
         $this->setReportFormatterDependencies(
             $this->reportClass,
             FormatterInterface::class,
-            $formatter
+            $formatter,
+            $options
         );
     }
 
