@@ -7,8 +7,8 @@ use AlecRabbit\Formatters\Core\AbstractFormatter;
 use AlecRabbit\Formatters\DefaultFormatter;
 use AlecRabbit\Reports\Contracts\ReportableInterface;
 use AlecRabbit\Reports\DefaultReport;
-use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use function AlecRabbit\container;
 
 abstract class AbstractReportable implements ReportableInterface
 {
@@ -20,14 +20,6 @@ abstract class AbstractReportable implements ReportableInterface
     public function __construct()
     {
         $this->setBindings();
-    }
-
-    /**
-     * @param AbstractFormatter|string|\Closure $formatter
-     */
-    public function setFormatter($formatter): void
-    {
-        $this->setReportFormatterDependencies($this->reportClass, FormatterInterface::class, $formatter);
     }
 
     protected function setBindings(string $reportClass = null, string $formatterClass = null): void
@@ -53,10 +45,25 @@ abstract class AbstractReportable implements ReportableInterface
                 return $formatter;
             };
         }
-        Container::getInstance()
+        container()
             ->when($reportClass)
             ->needs($formatterClass)
             ->give($formatter);
+    }
+
+    /**
+     * @param null|AbstractFormatter|string|\Closure $formatter
+     */
+    public function setFormatter($formatter = null): void
+    {
+        /** @noinspection ProperNullCoalescingOperatorUsageInspection */
+        $formatter = $formatter ?? $this->formatterClass;
+
+        $this->setReportFormatterDependencies(
+            $this->reportClass,
+            FormatterInterface::class,
+            $formatter
+        );
     }
 
     /**
@@ -68,6 +75,6 @@ abstract class AbstractReportable implements ReportableInterface
      */
     public function report(): AbstractReport
     {
-        return Container::getInstance()->make($this->reportClass, ['reportable' => $this]);
+        return container()->make($this->reportClass, ['reportable' => $this]);
     }
 }
