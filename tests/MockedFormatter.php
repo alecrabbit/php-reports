@@ -9,7 +9,6 @@ class MockedFormatter extends AbstractFormatter
 {
     public function __construct(?int $options = 3)
     {
-        dump(__METHOD__, $options);
         parent::__construct($options);
     }
 
