@@ -13,7 +13,6 @@
         "illuminate/container": "^5.8"
     },
     "require-dev": {
-        "kylekatarnls/multi-tester": "^1.1",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0",
         "symfony/var-dumper": "^4.2"
