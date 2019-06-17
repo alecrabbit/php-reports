@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Added
+- Changelog config
+
+### Updated
+- multi-tester config
+- Changelog
+
 
 <a name="0.2.5"></a>
 ## [0.2.5] - 2019-06-17
