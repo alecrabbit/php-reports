@@ -7,6 +7,14 @@ alecrabbit/php-console-colour:
   install: default
   script: default
 
+alecrabbit/php-counters:
+  install: default
+  script: default
+
+alecrabbit/php-timers:
+  install: default
+  script: default
+
 alecrabbit/php-accessories:
   install: default
   script: default
