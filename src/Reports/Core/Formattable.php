@@ -32,4 +32,14 @@ abstract class Formattable
     {
         return $this->formatter;
     }
+
+    /**
+     * @param null|FormatterInterface $formatter
+     * @return Formattable
+     */
+    public function setFormatter(?FormatterInterface $formatter): Formattable
+    {
+        $this->formatter = $formatter;
+        return $this;
+    }
 }

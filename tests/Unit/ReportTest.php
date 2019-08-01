@@ -5,6 +5,7 @@ namespace AlecRabbit\Tests\Reports;
 use AlecRabbit\Formatters\DefaultFormatter;
 use AlecRabbit\Reports\Core\AbstractReport;
 use AlecRabbit\Reports\Core\AbstractReportable;
+use AlecRabbit\Reports\Core\Formattable;
 use AlecRabbit\Reports\DefaultReport;
 use AlecRabbit\Tests\MockedFormatter;
 use AlecRabbit\Tests\MockedReport;
@@ -84,6 +85,25 @@ class ReportTest extends TestCase
         $report = new DefaultReport();
         $this->assertNull($report->getFormatter());
         $str = 'AlecRabbit\Reports\DefaultReport ERROR: no formatter';
+        $this->assertEquals($str, (string)$report);
+        $report->setFormatter(
+            new class extends DefaultFormatter {
+                /** {@inheritDoc} */
+                public function format(Formattable $formattable): string
+                {
+                    if ($formattable instanceof DefaultReport) {
+                        return
+                            sprintf(
+                                '[%s]: got %s',
+                                'New Formatter',
+                                get_class($formattable)
+                            );
+                    }
+                    return $this->errorMessage($formattable, DefaultReport::class);
+                }
+            }
+        );
+        $str = '[New Formatter]: got AlecRabbit\Reports\DefaultReport';
         $this->assertEquals($str, (string)$report);
     }
 
