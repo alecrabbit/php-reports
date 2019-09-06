@@ -10,7 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "illuminate/container": "^5.8"
+        "illuminate/container": "^5.8 || ^6.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^3.0",
