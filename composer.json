@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlecRabbit\\Aux\\": "src\\Aux",
+            "AlecRabbit\\Auxiliary\\": "src\\Auxiliary",
             "AlecRabbit\\Reports\\": "src\\Reports",
             "AlecRabbit\\Formatters\\": "src\\Formatters"
         },

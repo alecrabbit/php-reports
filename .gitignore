@@ -5,3 +5,5 @@
 /tests/report.html
 /.phpunit.result.cache
 /composer.lock
+
+build/

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AlecRabbit\Aux;
+namespace AlecRabbit\Auxiliary;
 
 use AlecRabbit\Reports\Core\Formattable;
 
