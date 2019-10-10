@@ -12,3 +12,5 @@
 [![Latest Unstable Version](https://poser.pugx.org/alecrabbit/php-reports/v/unstable)](https://packagist.org/packages/alecrabbit/php-reports)
 
 [![License](https://poser.pugx.org/alecrabbit/php-reports/license)](https://packagist.org/packages/alecrabbit/php-reports)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/alecrabbit/php-reports.svg)](http://isitmaintained.com/project/alecrabbit/php-reports "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/alecrabbit/php-reports.svg)](http://isitmaintained.com/project/alecrabbit/php-reports "Percentage of issues still open")
