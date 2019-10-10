@@ -3,6 +3,10 @@ alecrabbit/php-simple-profiler:
   install: default
   script: default
 
+alecrabbit/php-console-spinner:
+  install: default
+  script: default
+
 alecrabbit/php-console-colour:
   install: default
   script: default
